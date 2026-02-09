@@ -24,6 +24,7 @@
             padding: 0 20px;
         }
 
+        /* Header */
         header {
             padding: 20px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -66,24 +67,53 @@
             color: #a855f7;
         }
 
+        .lang-selector {
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e0e0e0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: #a855f7;
+            border-color: #a855f7;
+        }
+
+        .lang-btn:hover {
+            border-color: #a855f7;
+        }
+
+        /* Hero Section */
         .hero {
             padding: 100px 0;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             margin-bottom: 20px;
             background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 800;
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: 20px;
             color: #b0b0b0;
             margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-buttons {
@@ -91,6 +121,7 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 60px;
         }
 
         .btn {
@@ -98,9 +129,9 @@
             border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
+            border: none;
             cursor: pointer;
             transition: all 0.3s;
-            border: none;
             text-decoration: none;
             display: inline-block;
         }
@@ -125,114 +156,233 @@
             background: rgba(168, 85, 247, 0.1);
         }
 
+        /* Stats */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin: 80px 0;
+            gap: 30px;
+            margin-bottom: 80px;
+            padding: 40px;
+            background: rgba(168, 85, 247, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+        }
+
+        .stat {
             text-align: center;
         }
 
-        .stat-item h3 {
-            font-size: 36px;
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
             color: #a855f7;
             margin-bottom: 10px;
         }
 
-        .stat-item p {
+        .stat-label {
             color: #b0b0b0;
+            font-size: 14px;
         }
 
+        /* Features */
         .features {
+            padding: 80px 0;
+        }
+
+        .features h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ffffff;
+        }
+
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin: 80px 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.1);
             padding: 30px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
         }
 
         .feature-card:hover {
-            background: rgba(168, 85, 247, 0.1);
             border-color: #a855f7;
+            background: rgba(168, 85, 247, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
         }
 
         .feature-card h3 {
-            margin-bottom: 15px;
-            color: #a855f7;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
         }
 
+        .feature-card p {
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+        /* Pricing */
         .pricing {
-            margin: 80px 0;
+            padding: 80px 0;
+            background: rgba(168, 85, 247, 0.02);
         }
 
         .pricing h2 {
+            font-size: 40px;
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            color: #ffffff;
         }
 
-        .pricing-cards {
+        .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(168, 85, 247, 0.05);
+            border: 2px solid rgba(168, 85, 247, 0.1);
             padding: 40px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
+            transition: all 0.3s;
+            position: relative;
         }
 
-        .pricing-card.featured {
-            border: 2px solid #a855f7;
+        .pricing-card.popular {
+            border-color: #a855f7;
+            background: rgba(168, 85, 247, 0.1);
             transform: scale(1.05);
+        }
+
+        .pricing-card.popular::before {
+            content: 'Más popular';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         .pricing-card h3 {
             font-size: 24px;
             margin-bottom: 10px;
+            color: #ffffff;
         }
 
-        .price {
-            font-size: 36px;
-            color: #a855f7;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        .price-period {
+        .pricing-card p {
             color: #b0b0b0;
+            margin-bottom: 30px;
             font-size: 14px;
         }
 
-        .features-list {
-            text-align: left;
-            margin: 30px 0;
+        .pricing-amount {
+            font-size: 48px;
+            font-weight: bold;
+            color: #a855f7;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
             list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
         }
 
-        .features-list li {
+        .pricing-features li {
             padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: #b0b0b0;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.1);
         }
 
-        .features-list li:before {
-            content: "✓ ";
+        .pricing-features li::before {
+            content: '✓ ';
             color: #a855f7;
             font-weight: bold;
             margin-right: 10px;
         }
 
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonials h2 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ffffff;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .testimonial-text {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #a855f7;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #666;
+        }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -242,26 +392,39 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modal-content {
             background-color: #1a1a2e;
-            margin: 10% auto;
+            margin: 5% auto;
             padding: 30px;
-            border: 1px solid #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.2);
             border-radius: 12px;
             width: 90%;
             max-width: 800px;
             max-height: 80vh;
             overflow-y: auto;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .close {
-            color: #e0e0e0;
+            color: #b0b0b0;
             float: right;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
+            transition: color 0.3s;
         }
 
         .close:hover {
@@ -269,53 +432,71 @@
         }
 
         .modal-title {
-            font-size: 24px;
+            color: #ffffff;
             margin-bottom: 20px;
-            color: #a855f7;
+            font-size: 24px;
         }
 
         .modal-video {
             width: 100%;
-            height: auto;
+            aspect-ratio: 16/9;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            background: #000;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #b0b0b0;
-            margin-top: 80px;
+        .chatbot-container {
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
         }
 
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 80px 0;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 4px solid #a855f7;
-        }
-
-        .testimonial p {
+        .chatbot-message {
             margin-bottom: 15px;
-            font-style: italic;
+            padding: 10px;
+            border-radius: 6px;
             color: #b0b0b0;
         }
 
-        .testimonial-author {
+        .chatbot-message.bot {
+            background: rgba(168, 85, 247, 0.1);
             color: #a855f7;
-            font-weight: bold;
+        }
+
+        .chatbot-message.user {
+            background: rgba(236, 72, 153, 0.1);
+            color: #ec4899;
+            text-align: right;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -325,178 +506,201 @@
                     <a onclick="scrollToSection('pricing')">Pricing</a>
                     <a onclick="scrollToSection('testimonials')">Testimonios</a>
                 </nav>
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="setLanguage('es')">ES</button>
+                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                    <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+                    <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+                    <button class="lang-btn" onclick="setLanguage('it')">IT</button>
+                </div>
             </div>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>🚀 Email Marketing con IA</h1>
-                <p>Automatiza tu Email Marketing con Inteligencia Artificial</p>
-                <p style="font-size: 14px; color: #888;">MailFlow AI genera, personaliza y envía campañas de email que convierten. Sin esfuerzo. Sin complicaciones.</p>
-                
-                <div class="cta-buttons">
-                    <button class="btn btn-primary" onclick="openDemo()">Ver Demo</button>
-                    <button class="btn btn-secondary" onclick="scrollToSection('pricing')">Empezar Gratis</button>
-                </div>
-
-                <div class="stats">
-                    <div class="stat-item">
-                        <h3>500+</h3>
-                        <p>Empresas</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>10M+</h3>
-                        <p>Emails enviados</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>45%</h3>
-                        <p>Tasa de apertura</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>3x</h3>
-                        <p>ROI promedio</p>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 id="hero-title">🚀 Email Marketing con IA</h1>
+            <p id="hero-subtitle">Automatiza tu Email Marketing con Inteligencia Artificial</p>
+            <p id="hero-description" style="font-size: 16px; color: #888; margin-bottom: 30px;">MailFlow AI genera, personaliza y envía campañas de email que convierten. Sin esfuerzo. Sin complicaciones.</p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="openDemo()">Ver Demo</button>
+                <button class="btn btn-secondary" onclick="startTrial()">Empezar Gratis</button>
             </div>
-        </section>
 
-        <section id="features">
-            <div class="container">
-                <h2 style="text-align: center; font-size: 36px; margin-bottom: 50px;">Todo lo que necesitas para dominar el email marketing</h2>
-                
-                <div class="features">
-                    <div class="feature-card">
-                        <h3>🤖 IA que escribe por ti</h3>
-                        <p>Genera emails persuasivos en segundos con nuestra IA avanzada</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>🎯 Segmentación inteligente</h3>
-                        <p>Agrupa automáticamente a tus contactos por comportamiento</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>📊 Analytics en tiempo real</h3>
-                        <p>Métricas detalladas de apertura, clics y conversiones</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>⚡ Automatizaciones</h3>
-                        <p>Secuencias de emails que se envían solas</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>✅ Deliverability garantizada</h3>
-                        <p>Tus emails llegan a la bandeja de entrada, no a spam</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>🕐 Envío optimizado</h3>
-                        <p>La IA elige el mejor momento para enviar cada email</p>
-                    </div>
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Empresas</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10M+</div>
+                    <div class="stat-label">Emails enviados</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">45%</div>
+                    <div class="stat-label">Tasa de apertura</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3x</div>
+                    <div class="stat-label">ROI promedio</div>
                 </div>
             </div>
-        </section>
-
-        <section id="pricing" class="pricing">
-            <div class="container">
-                <h2>Planes simples, resultados extraordinarios</h2>
-                <p style="text-align: center; color: #b0b0b0; margin-bottom: 50px;">Sin contratos. Cancela cuando quieras.</p>
-                
-                <div class="pricing-cards">
-                    <div class="pricing-card">
-                        <h3>Starter</h3>
-                        <p style="color: #b0b0b0;">Perfecto para empezar</p>
-                        <div class="price">€29<span class="price-period">/mes</span></div>
-                        <ul class="features-list">
-                            <li>Hasta 1,000 contactos</li>
-                            <li>Campañas ilimitadas</li>
-                            <li>IA básica</li>
-                            <li>Soporte por email</li>
-                            <li>Templates premium</li>
-                        </ul>
-                        <button class="btn btn-primary" onclick="selectPlan('starter')">Empezar ahora</button>
-                    </div>
-
-                    <div class="pricing-card featured">
-                        <div style="background: #a855f7; color: white; padding: 8px 16px; border-radius: 20px; display: inline-block; margin-bottom: 15px; font-size: 12px;">Más popular</div>
-                        <h3>Pro</h3>
-                        <p style="color: #b0b0b0;">Para negocios en crecimiento</p>
-                        <div class="price">€79<span class="price-period">/mes</span></div>
-                        <ul class="features-list">
-                            <li>Hasta 10,000 contactos</li>
-                            <li>Campañas ilimitadas</li>
-                            <li>IA avanzada</li>
-                            <li>Automatizaciones</li>
-                            <li>Soporte prioritario</li>
-                            <li>A/B Testing</li>
-                            <li>Integraciones</li>
-                        </ul>
-                        <button class="btn btn-primary" onclick="selectPlan('pro')">Elegir Pro</button>
-                    </div>
-
-                    <div class="pricing-card">
-                        <h3>Enterprise</h3>
-                        <p style="color: #b0b0b0;">Para grandes empresas</p>
-                        <div class="price">€199<span class="price-period">/mes</span></div>
-                        <ul class="features-list">
-                            <li>Contactos ilimitados</li>
-                            <li>Todo de Pro</li>
-                            <li>IA personalizada</li>
-                            <li>API completa</li>
-                            <li>Soporte dedicado 24/7</li>
-                            <li>Onboarding personalizado</li>
-                            <li>SLA garantizado</li>
-                        </ul>
-                        <button class="btn btn-secondary" onclick="selectPlan('enterprise')">Contactar ventas</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials">
-            <div class="container">
-                <h2 style="text-align: center; font-size: 36px; margin-bottom: 50px;">Lo que dicen nuestros clientes</h2>
-                
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <p>"MailFlow AI triplicó nuestras conversiones en 2 meses. La IA es increíble."</p>
-                        <div class="testimonial-author">María García - TechStartup</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Ahorramos 20 horas semanales en email marketing. Totalmente automatizado."</p>
-                        <div class="testimonial-author">Carlos López - E-commerce Plus</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Nuestros clientes aman los resultados. MailFlow es nuestra arma secreta."</p>
-                        <div class="testimonial-author">Ana Martínez - Agencia Digital</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section style="text-align: center; padding: 80px 0; background: rgba(168, 85, 247, 0.1); margin-top: 80px; border-radius: 12px;">
-            <div class="container">
-                <h2 style="font-size: 36px; margin-bottom: 20px;">¿Listo para revolucionar tu email marketing?</h2>
-                <p style="font-size: 18px; color: #b0b0b0; margin-bottom: 30px;">Únete a más de 500 empresas que ya usan MailFlow AI</p>
-                <button class="btn btn-primary" onclick="scrollToSection('pricing')">Empezar prueba gratuita</button>
-            </div>
-        </section>
-    </main>
-
-    <div id="demoModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeDemo()">&times;</span>
-            <div class="modal-title">Demo de MailFlow AI</div>
-            <video class="modal-video" controls>
-                <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030501357/KTqHOFpmLUQafTaw.mp4" type="video/mp4">
-                Tu navegador no soporta video HTML5
-            </video>
         </div>
-    </div>
+    </section>
 
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Todo lo que necesitas para dominar el email marketing</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>IA que escribe por ti</h3>
+                    <p>Genera emails persuasivos en segundos con nuestra IA avanzada</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Segmentación inteligente</h3>
+                    <p>Agrupa automáticamente a tus contactos por comportamiento</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics en tiempo real</h3>
+                    <p>Métricas detalladas de apertura, clics y conversiones</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Automatizaciones</h3>
+                    <p>Secuencias de emails que se envían solas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Deliverability garantizada</h3>
+                    <p>Tus emails llegan a la bandeja de entrada, no a spam</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕐</div>
+                    <h3>Envío optimizado</h3>
+                    <p>La IA elige el mejor momento para enviar cada email</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>Planes simples, resultados extraordinarios</h2>
+            <p style="text-align: center; color: #b0b0b0; margin-bottom: 60px;">Sin contratos. Cancela cuando quieras.</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <p>Perfecto para empezar</p>
+                    <div class="pricing-amount">€29<span style="font-size: 18px; color: #b0b0b0;">/mes</span></div>
+                    <ul class="pricing-features">
+                        <li>Hasta 1,000 contactos</li>
+                        <li>Campañas ilimitadas</li>
+                        <li>IA básica</li>
+                        <li>Soporte por email</li>
+                        <li>Templates premium</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="selectPlan('starter')">Empezar ahora</button>
+                </div>
+
+                <div class="pricing-card popular">
+                    <h3>Pro</h3>
+                    <p>Para negocios en crecimiento</p>
+                    <div class="pricing-amount">€79<span style="font-size: 18px; color: #b0b0b0;">/mes</span></div>
+                    <ul class="pricing-features">
+                        <li>Hasta 10,000 contactos</li>
+                        <li>Campañas ilimitadas</li>
+                        <li>IA avanzada</li>
+                        <li>Automatizaciones</li>
+                        <li>Soporte prioritario</li>
+                        <li>A/B Testing</li>
+                        <li>Integraciones</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectPlan('pro')">Elegir Pro</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p>Para grandes empresas</p>
+                    <div class="pricing-amount">€199<span style="font-size: 18px; color: #b0b0b0;">/mes</span></div>
+                    <ul class="pricing-features">
+                        <li>Contactos ilimitados</li>
+                        <li>Todo de Pro</li>
+                        <li>IA personalizada</li>
+                        <li>API completa</li>
+                        <li>Soporte dedicado 24/7</li>
+                        <li>Onboarding personalizado</li>
+                        <li>SLA garantizado</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="selectPlan('enterprise')">Contactar ventas</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"MailFlow AI triplicó nuestras conversiones en 2 meses. La IA es increíble."</div>
+                    <div class="testimonial-author">María García - TechStartup</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"Ahorramos 20 horas semanales en email marketing. Totalmente automatizado."</div>
+                    <div class="testimonial-author">Carlos López - E-commerce Plus</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">"Nuestros clientes aman los resultados. MailFlow es nuestra arma secreta."</div>
+                    <div class="testimonial-author">Ana Martínez - Agencia Digital</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>¿Listo para revolucionar tu email marketing?</h2>
+            <p>Únete a más de 500 empresas que ya usan MailFlow AI</p>
+            <button class="btn btn-primary" onclick="startTrial()" style="padding: 16px 40px; font-size: 18px;">Empezar prueba gratuita</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2026 MailFlow AI. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Demo Modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDemo()">&times;</span>
+            <div class="modal-title">Demo de MailFlow AI</div>
+            <video class="modal-video" controls>
+                <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030501357/WosaiSEbSLGnRFgc.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5
+            </video>
+            <div class="chatbot-container">
+                <div class="chatbot-message bot">¡Hola! Soy el asistente de MailFlow AI. ¿Tienes alguna pregunta sobre nuestro servicio?</div>
+                <div class="chatbot-message user">¿Cuál es el precio?</div>
+                <div class="chatbot-message bot">Nuestros planes comienzan en €29/mes para el plan Starter. El plan Pro es €79/mes y Enterprise es €199/mes. ¿Cuál te interesa?</div>
+                <div class="chatbot-message user">¿Hay prueba gratuita?</div>
+                <div class="chatbot-message bot">¡Sí! Puedes comenzar con una prueba gratuita de 14 días sin necesidad de tarjeta de crédito. ¿Quieres comenzar?</div>
+            </div>
+        </div>
+    </div>
 
     <script>
         function openDemo() {
@@ -507,8 +711,14 @@
             document.getElementById('demoModal').style.display = 'none';
         }
 
+        function startTrial() {
+            // Mostrar mensaje de que el checkout será implementado
+            alert('El checkout de Stripe será implementado pronto. Por ahora, contacta a sales@mailflowai.org');
+        }
+
         function selectPlan(plan) {
-            alert('El checkout será implementado pronto. Por ahora, contacta a sales@mailflowai.org');
+            // Mostrar mensaje de que el checkout será implementado
+            alert('El checkout de Stripe será implementado pronto. Por ahora, contacta a sales@mailflowai.org');
         }
 
         function scrollToSection(section) {
@@ -518,6 +728,16 @@
             }
         }
 
+        function setLanguage(lang) {
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Language content would be implemented here
+            console.log('Language set to:', lang);
+        }
+
+        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('demoModal');
             if (event.target == modal) {
